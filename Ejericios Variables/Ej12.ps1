@@ -7,3 +7,8 @@ de los payasos y muñecas que saldrán en cada paquete a demanda. Cada payaso pe
 calcule el peso total del paquete que será enviado.
 #>
 
+[int]$numPayasos = Read-Host "¿Cuántos payasos hay en el paquete?"
+[int]$numMuñecas = Read-Host "¿Cuántas muñecas hay en el paquete?"
+
+[int]$resultado = ($numPayasos * 112) + ($numMuñecas * 75)
+Write-Host "El peso total del paquete es de: " ($resultado/1000) "Kg"
