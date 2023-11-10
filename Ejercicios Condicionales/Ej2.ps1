@@ -6,7 +6,7 @@ coincide con la guardada en la variable sin tener en cuenta mayúsculas y minús
 #>
 $pass = "secreto"
 $pass_introducida = Read-Host "Introduce tu contraseña"
-if($pass_introducida.ToUpper() -ieq $pass.ToUpper()){
+if($pass_introducida.ToUpper() -eq $pass.ToUpper()){
     Write-Host "Contraseña correcta"
 }
 else {

@@ -17,6 +17,7 @@ rendimiento, así como la cantidad de dinero que recibirá el usuario.
 ```
 #>
 
+
 [decimal]$puntuacion = Read-Host "Introduce su puntuación"
 $nivel = ""
 
@@ -34,14 +35,15 @@ $dinero = (2400 * $puntuacion)
 
 Write-Host "Su nivel es $nivel y le corresponde $dinero total"
 
+
 <#
 [decimal]$puntuacion = Read-Host "Introduce su puntuación"
 $nivel = ""
 
 switch($puntuacion){
-    {$_ -eq 0.0}{$nivel = "Inaceptable"}
-    {$_ -eq 0.4}{$nivel = "Aceptable"}
-    {$_ -eq 0.6}{$nivel = "Meritorio"}
+    {$_ -eq 0.0}{$nivel = "Inaceptable"; Break }
+    {$_ -eq 0.4}{$nivel = "Aceptable"; Break }
+    {$_ -ge 0.6}{$nivel = "Meritorio"; Break }
     default {$nivel = "Invalido"}
 }
 
