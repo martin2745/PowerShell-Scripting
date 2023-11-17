@@ -15,18 +15,18 @@ do {
     Write-Host "2. Convertir de Fahrenheit a Celsius"
     Write-Host "3. Salir"
 
-    $opcion = Read-Host "Ingrese el número de la operación deseada"
+    [int]$opcion = Read-Host "Ingrese el número de la operación deseada"
 
     switch ($opcion) {
         1 {
-            $temperaturaC = Read-Host "Ingrese la temperatura en grados Celsius"
-            $temperaturaF = ConvertirAFahrenheit -temperaturaC $temperaturaC
+            [float]$temperaturaC = Read-Host "Ingrese la temperatura en grados Celsius"
+            [float]$temperaturaF = ConvertirAFahrenheit -temperaturaC $temperaturaC
             Write-Host "Resultado: $temperaturaC grados Celsius son $temperaturaF grados Fahrenheit"
             
         }
         2 {
-            $temperaturaF = Read-Host "Ingrese la temperatura en grados Fahrenheit"
-            $temperaturaC = ConvertirACelsius -temperaturaF $temperaturaF
+            [float]$temperaturaF = Read-Host "Ingrese la temperatura en grados Fahrenheit"
+            [float]$temperaturaC = ConvertirACelsius -temperaturaF $temperaturaF
             Write-Host "Resultado: $temperaturaF grados Fahrenheit son $temperaturaC grados Celsius"
         }
         3 {
