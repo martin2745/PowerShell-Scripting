@@ -1,0 +1,38 @@
+REM Seleccionamos el disco a particionar
+select disk 1
+
+REM Borramos la tabla de particiones del disco 1
+clean
+
+REM Creamos una partición primaria de 10GiB
+create partition primary size=10240
+
+REM Asignamos como sistema de ficheros NTFS y asignamos la etiqueta DATOS
+format fs=ntfs label="DATOS" quick
+
+REM Asignamos la letra V
+assign letter=V
+
+REM Creamos una partición extendida con el resto del disco
+create partition extended
+
+REM Creamos una partición lógica de 5GiB
+create partition logical size=5120
+
+REM Asignamos como sistema de ficheros NTFS y asignamos la etiqueta Almacen
+format fs=NTFS label="Almacen" quick
+
+REM Le asignamos la letra W
+assign letter=W
+
+REM Creamos una partición lógica con el resto del disco
+create partition logical
+
+REM Montamos la última partición logica en C:\Cosas
+assign mount=C:\Cosas
+
+REM Asignamos como sistema de ficheros FAT32 y asignamos la etiqueta Intercambio
+format fs=fat32 label="Intercambio" quick
+
+REM Salir
+exit
