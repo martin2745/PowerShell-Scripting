@@ -1,7 +1,7 @@
 ### Particionado en windows con diskpart
 
 Diskpart es un gestor de particiones por línea de comandos que forma parte de los sistemas Windows de Servidor y Escritorio.
-Permite realizar las mismas operaciones que hacemos desde el  Administrador de disco.
+Permite realizar las mismas operaciones que hacemos desde el Administrador de disco.
 
 Una característica interesante del Diskpart es que es posible crear scripts. A continuación se recogen los principales comando de `diskpart`.
 
@@ -35,7 +35,7 @@ DISKPART>
 ```
 
 2. Listamos los discos.
-   
+
 ```powershell
 DISKPART> list disk
 
@@ -308,33 +308,4 @@ DiskPart asignó correctamente una letra de unidad o punto de montaje.
 
 ---
 
-### Tarea a realizar
-
-**Enunciado de la Tarea:**
-
-Crear un script en Windows para particionar un disco de 20GB. Deberán crear dos archivos: un archivo particionar.bat y un archivo de respuesta para DiskPart (particiones.txt).
-
-### Detalles de las Particiones:
-
-1. **Primaria:**
-   - Tamaño: 10 GiB
-   - Sistema de ficheros: NTFS
-   - Etiqueta: "DATOS"
-   - Letra: V
-
-2. **Extendida:**
-   - Contendrá dos particiones lógicas.
-
-3. **Primera Lógica:**
-   - Tamaño: 5 GiB
-   - Sistema de ficheros: NTFS
-   - Etiqueta: "Almacen"
-   - Letra: W
-
-4. **Segunda Lógica:**
-   - Tamaño: Restante del disco
-   - Sistema de ficheros: FAT32
-   - Etiqueta: "Intercambio"
-   - Punto de montaje: C:\COSAS
-
-Crear un archivo .bat que cree el directorio `C:\COSAS` y ejecute DiskPart con el archivo .txt. En el archivo .txt, deben incluirse los comandos para seleccionar el disco, limpiar, crear y formatear las particiones según las especificaciones.
+[Tarea a realizar](./tarea/tarea.md)
